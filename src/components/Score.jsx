@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-let score = 10;
 class Score extends Component {
   render() {
+    const { score } = this.props;
     return <div>{score}</div>;
   }
 }

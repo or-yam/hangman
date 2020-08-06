@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
-// import Letter from './Letter';
-
-const letters = 'abcdefghijklmnopqrstuvwxyz'
+import Letter from './Letter';
 
 class Letters extends Component {
   render() {
-    return <div>{letters[4]}</div> ;
+    const { letters } = this.props;
+    return Object.keys(letters).map((l) =>
+      letters[l] ? (
+        <Letter status="checked" letter={l} />
+      ) : (
+        <Letter status="unChecked" letter={l} />
+      )
+    );
   }
 }
 
