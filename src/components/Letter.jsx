@@ -1,11 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const Letter = (props) => {
   const { letter, status } = props;
-  return letter ? (
-    <span className={status}>{letter}</span>
-  ) : (
-    <span className={status}>{letter}</span>
+
+  const selectLetter = () => {
+    props.selectLetter(letter);
+  };
+
+  return (
+    <span onClick={selectLetter} className={status}>
+      {letter}
+    </span>
   );
 };
 export default Letter;

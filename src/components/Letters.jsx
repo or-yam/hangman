@@ -6,9 +6,17 @@ class Letters extends Component {
     const { letters } = this.props;
     return Object.keys(letters).map((l) =>
       letters[l] ? (
-        <Letter status="checked" letter={l} />
+        <Letter
+          selectLetter={this.props.selectLetter}
+          status="checked"
+          letter={l}
+        />
       ) : (
-        <Letter status="unChecked" letter={l} />
+        <Letter
+          selectLetter={this.props.selectLetter}
+          status="unChecked"
+          letter={l}
+        />
       )
     );
   }

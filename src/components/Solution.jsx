@@ -13,9 +13,9 @@ class Solution extends Component {
             .split('')
             .map((l) =>
               letters[l.toUpperCase()] ? (
-                <Letter status="show" letter={l} />
+                <Letter  status="show" letter={l} />
               ) : (
-                <Letter status="hide" letter={'_'} />
+                <Letter  status="hide" letter={'_'} />
               )
             )}
         </div>
