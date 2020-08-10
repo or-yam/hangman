@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  outline: none;
 }
 
 body {
@@ -10,9 +11,8 @@ body {
 }
 
 .game-container {
-  width: 100vw;
-  height: 100vh;
-  /* padding: 10px; */
+  max-width: 100vw;
+  max-height: 100vh;
   display: grid;
   grid-template-rows: 80% 20%;
   grid-template-columns: 1fr 3fr 1fr;
@@ -48,6 +48,7 @@ body {
   border: solid black 0.5px;
   box-shadow: 3px 3px gray;
   border-radius: 7px;
+  cursor: pointer;
 }
 
 .word {
@@ -59,6 +60,7 @@ body {
 .hangman {
   width: 90%;
   height: 90%;
+  text-align: center;
 }
 
 .hangman img {
@@ -68,15 +70,18 @@ body {
 
 .show {
   background-color: #10ddc2;
+  cursor: default;
 }
 
 .hide {
   background-color: #15b7b9;
+  cursor: default;
 }
 
 .checked {
-  text-decoration: line-through;
   background-color: #757575;
+  box-shadow: none;
+  cursor: default;
 }
 
 .highScore {
@@ -117,6 +122,7 @@ body {
 }
 
 .back-container button {
+  cursor: pointer;
   background-color: transparent;
   border: none;
 }

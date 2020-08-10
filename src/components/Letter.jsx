@@ -4,7 +4,9 @@ const Letter = (props) => {
   const { letter, status } = props;
 
   const selectLetter = () => {
-    return props.selectLetter ? props.selectLetter(letter) : null;
+    return props.selectLetter && status === 'unChecked'
+      ? props.selectLetter(letter)
+      : null;
   };
 
   return (

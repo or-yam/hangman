@@ -7,6 +7,7 @@ class Score extends Component {
     return (
       <div>
         <div className="hangman">
+          <h1>Riddles from The Hobbit</h1>
           <img src={`../../assets/${score}.png`} alt="" />
         </div>
 

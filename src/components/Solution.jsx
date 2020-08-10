@@ -15,7 +15,7 @@ class Solution extends Component {
               letters[l.toUpperCase()] ? (
                 <Letter  status="show" letter={l.toUpperCase()}  />
               ) : (
-                <Letter  status="hide" letter={'_'} />
+                <Letter  status="hide" letter={'__'} />
               )
             )}
         </div>
