@@ -15,7 +15,7 @@ class App extends Component {
         hint:
           'What has roots as nobody sees,Is taller than treesUp, up it goes,And yet never grows?',
       },
-      score: 80,
+      score: 100,
     };
   }
 
@@ -51,28 +51,37 @@ class App extends Component {
 
   endGame = () => {
     let word = this.state.solution.word.split('').map((l) => l.toUpperCase());
-    let allChecked = Object.keys(this.state.letterStatus).every(
-      (l) => this.state.letterStatus[l]
-    );
+
     let wordChecked = word.every((l) => this.state.letterStatus[l]);
-    return wordChecked ? 'win' : allChecked ? 'lost' : false;
+
+    return wordChecked ? 'win' : !this.state.score ? 'lost' : false;
+  };
+
+  rematch = () => {
+    this.setState({ score: 100, letterStatus: this.generateLettersStatus() });
   };
 
   render() {
     const { letterStatus, solution, score } = this.state;
     return !this.endGame() ? (
-      <div>
-        <Score score={score} />
-        <Solution
-          className="solution"
-          solution={solution}
-          letters={letterStatus}
-        />
-        <Letters selectLetter={this.selectLetter} letters={letterStatus} />
+      <div className="game-container">
+        <div className="stats-container">Stats</div>
+        <div className="score-container">
+          {' '}
+          <Score score={score} />
+        </div>
+        <div className="letters-container">
+          {' '}
+          <Letters selectLetter={this.selectLetter} letters={letterStatus} />
+        </div>
+        <div className="solution-container">
+          {' '}
+          <Solution solution={solution} letters={letterStatus} />{' '}
+        </div>
       </div>
     ) : (
       <div>
-        <EndGame status={this.endGame()} />
+        <EndGame rematch={this.rematch} status={this.endGame()} />
       </div>
     );
   }

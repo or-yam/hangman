@@ -4,11 +4,11 @@ const Letter = (props) => {
   const { letter, status } = props;
 
   const selectLetter = () => {
-    props.selectLetter(letter);
+    return props.selectLetter ? props.selectLetter(letter) : null;
   };
 
   return (
-    <span onClick={selectLetter} className={status}>
+    <span onClick={selectLetter} className={`${status} letter`}>
       {letter}
     </span>
   );
