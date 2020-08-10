@@ -5,7 +5,7 @@ class Score extends Component {
     const { score } = this.props;
 
     return (
-      <div>
+      <div className="score-container">
         <div className="hangman">
           <h1>Riddles from The Hobbit</h1>
           <img src={`../../assets/${score}.png`} alt="" />
@@ -14,10 +14,10 @@ class Score extends Component {
         <div
           className={
             score >= 80
-              ? 'highScore'
+              ? 'highScore score'
               : score < 80 && score >= 50
-              ? 'mediumScore'
-              : 'lowScore'
+              ? 'mediumScore score'
+              : 'lowScore score'
           }
         >
           {score}

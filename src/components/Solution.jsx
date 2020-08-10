@@ -7,19 +7,19 @@ class Solution extends Component {
     const { letters, solution } = this.props;
 
     return (
-      <div>
-        <div className='word'>
+      <div className="solution-container">
+        <div className="word">
           {solution.word
             .split('')
             .map((l) =>
               letters[l.toUpperCase()] ? (
-                <Letter  status="show" letter={l.toUpperCase()}  />
+                <Letter key={l} status="show" letter={l.toUpperCase()} />
               ) : (
-                <Letter  status="hide" letter={'__'} />
+                <Letter key={l} status="hide" letter={'__'} />
               )
             )}
         </div>
-        <div>{solution.hint}</div>
+        <div className="hint">{solution.hint}</div>
       </div>
     );
   }

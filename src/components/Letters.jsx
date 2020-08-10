@@ -7,12 +7,14 @@ class Letters extends Component {
     return Object.keys(letters).map((l) =>
       letters[l] ? (
         <Letter
+        key={l}
           selectLetter={this.props.selectLetter}
           status="checked"
           letter={l}
         />
       ) : (
-        <Letter
+        <Letter 
+        key={l}
           selectLetter={this.props.selectLetter}
           status="unChecked"
           letter={l}

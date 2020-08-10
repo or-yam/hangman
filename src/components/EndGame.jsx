@@ -15,14 +15,20 @@ class EndGame extends Component {
         </div>
         {this.props.status === 'win' ? (
           <div className="win-container">
-            You Won!{' '}
-            <span role="img" aria-label="sad">
+            <span role="img" aria-label="magic">
+              🧙‍♂️
+            </span>
+            You Won!
+            <span role="img" aria-label="happy">
               😄
-            </span>{' '}
+            </span>
           </div>
         ) : (
           <div className="lost-container">
-            You Lost{' '}
+            <span role="img" aria-label="sad">
+              🐉
+            </span>
+            You Lost
             <span role="img" aria-label="sad">
               😔
             </span>

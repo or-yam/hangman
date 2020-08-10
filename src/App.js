@@ -71,21 +71,14 @@ class App extends Component {
     const { letterStatus, solution, score } = this.state;
     return !this.endGame() ? (
       <div className="game-container">
-        <div className="stats-container"></div>
-        <div className="score-container">
-          <Score score={score} />
-        </div>
+        <Score score={score} />
         <div className="letters-container">
           <Letters selectLetter={this.selectLetter} letters={letterStatus} />
         </div>
-        <div className="solution-container">
-          <Solution solution={solution} letters={letterStatus} />
-        </div>
+        <Solution solution={solution} letters={letterStatus} />
       </div>
     ) : (
-      <div>
-        <EndGame rematch={this.rematch} status={this.endGame()} />
-      </div>
+      <EndGame rematch={this.rematch} status={this.endGame()} />
     );
   }
 }
