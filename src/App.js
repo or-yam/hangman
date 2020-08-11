@@ -11,10 +11,7 @@ class App extends Component {
     super();
     this.state = {
       letterStatus: this.generateLettersStatus(),
-      solution: {
-        word: this.generateRiddle().word,
-        hint: this.generateRiddle().hint,
-      },
+      solution: this.generateRiddle(),
       score: 100,
     };
   }

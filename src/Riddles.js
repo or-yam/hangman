@@ -1,6 +1,6 @@
 const riddles = [
   {
-    word: 'mountain',
+    word: 'Mountain',
     hint:
       'What has roots as nobody sees, Is taller than trees, Up, up it goes,And yet never grows?',
   },
