@@ -56,8 +56,8 @@ class App extends Component {
 
   endGame = () => {
     let word = this.state.solution.word.split('').map((l) => l.toUpperCase());
-    let wordChecked = word.every((l) => this.state.letterStatus[l]);
-    return wordChecked ? 'win' : !this.state.score ? 'lost' : false;
+    let isWon = word.every((l) => this.state.letterStatus[l]);
+    return isWon ? 'win' : !this.state.score ? 'lost' : false;
   };
 
   rematch = () => {
